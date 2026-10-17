@@ -1,0 +1,14 @@
+# Secrets and per-user data: never commit
+client_secret.json
+token.json
+data/
+*.backup-*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Build output
+dist/
+*.zip

@@ -1,0 +1,12 @@
+{
+  "watch_root": "%USERPROFILE%\\YouTubeUploads",
+  "incoming_dir": "incoming",
+  "uploaded_dir": "uploaded",
+  "failed_dir": "failed",
+  "client_secret_file": "data/client_secret.json",
+  "token_file": "data/token.json",
+  "upload_log": "data/uploads.jsonl",
+  "default_privacy": "private",
+  "default_made_for_kids": false,
+  "video_extensions": [".mp4", ".mov", ".mkv", ".webm", ".avi", ".m4v"]
+}
