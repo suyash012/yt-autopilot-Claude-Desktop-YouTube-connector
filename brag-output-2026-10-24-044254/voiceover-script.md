@@ -2,7 +2,7 @@
 
 For `brag.mp4` and `brag-vo-bed.mp4` (22 s, vertical). About 45 words, which is roughly 14 s of speech, so there is room to breathe.
 
-> **Update:** a recording has since been mixed in as `brag-voiced.mp4` (24 s). The cue times below were my first estimate; the recorded take set the real timing. See `voiceover-mix-notes.md`.
+> **Update:** a recording has since been mixed in as `brag-voiced.mp4` (24.5 s). The cue times below were my first estimate; the recorded take set the real timing. See `voiceover-mix-notes.md`.
 
 **Delivery:** calm, dry, a little pleased with itself. Don't announce it, just say it.
 **Say the name as:** "yt-autopilot" → "why-tee autopilot".

@@ -12,7 +12,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <title>yt-autopilot brag (9:16, voiced)</title>
+    <title>yt-autopilot brag (9:16, voiced, captioned)</title>
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
       :root {
@@ -115,7 +115,8 @@
       .window {
         position: absolute;
         left: 72px;
-        top: 150px;
+        top: 110px;
+        transform-origin: 50% 0%;
         width: 936px;
         height: 1380px;
         border-radius: 40px;
@@ -256,6 +257,49 @@
       #pill-pub {
         display: none;
       }
+      /* Closing line (scene 5) */
+      .cta-a {
+        font-size: 64px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #c9cdd6;
+      }
+      .cta-b {
+        font-family: var(--font-display);
+        font-size: 104px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        color: var(--color-accent);
+      }
+      .cw {
+        display: inline-block;
+      }
+      /* Captions (chat section only): a strip below the scaled chat window, above the platform UI band */
+      .cap {
+        position: absolute;
+        left: 80px;
+        right: 80px;
+        top: 1378px;
+        height: 152px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        gap: 0 14px;
+        text-align: center;
+        font-weight: 800;
+        font-size: 54px;
+        line-height: 1.2;
+        color: var(--color-ink);
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+      }
+      .cwd {
+        display: inline-block;
+      }
+      .hl {
+        color: var(--color-accent);
+      }
       /* Highlights (scene 4) */
       .row {
         position: absolute;
@@ -287,7 +331,7 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="24"
+      data-duration="24.5"
       data-width="1080"
       data-height="1920"
     >
@@ -295,11 +339,11 @@
       <audio
         id="music"
         data-start="0"
-        data-duration="24"
+        data-duration="24.5"
         data-track-index="10"
         data-volume="0.35"
         data-fade-out="1.6"
-        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0.0,"v":1.0},{"t":0.05,"v":1.0},{"t":0.25,"v":0.4},{"t":4.79,"v":0.4},{"t":5.29,"v":1.0},{"t":6.05,"v":1.0},{"t":6.3,"v":0.4},{"t":12.0,"v":0.4},{"t":12.5,"v":1.0},{"t":13.95,"v":1.0},{"t":14.2,"v":0.4},{"t":23.51,"v":0.4},{"t":24.0,"v":1.0}]}]}'
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0.0,"v":1.0},{"t":0.05,"v":1.0},{"t":0.25,"v":0.4},{"t":4.79,"v":0.4},{"t":5.29,"v":1.0},{"t":6.05,"v":1.0},{"t":6.3,"v":0.4},{"t":12.0,"v":0.4},{"t":12.5,"v":1.0},{"t":13.95,"v":1.0},{"t":14.2,"v":0.4},{"t":23.51,"v":0.4}]}]}'
         src="assets/music/happy-beats-business-moves-vol-10-by-ende-dot-app.mp3"
       ></audio>
       <audio id="vo" data-start="0" data-duration="24" data-track-index="30" data-volume="1" src="assets/vo/voiceover.wav"></audio>
@@ -314,7 +358,7 @@
       <audio id="sfx-outro" data-start="18.55" data-duration="0.14" data-track-index="19" data-volume="0.45" src="assets/sfx/impact/impactSoft_medium_003.ogg"></audio>
 
       <!-- Background glow, breathing with the music's bass -->
-      <section id="s0" class="clip scene" data-start="0" data-duration="24" data-track-index="0">
+      <section id="s0" class="clip scene" data-start="0" data-duration="24.5" data-track-index="0">
         <div id="glow"></div>
       </section>
 
@@ -360,10 +404,20 @@
       </section>
 
       <!-- Scene 5: punchline and credit (credit sits above the bottom UI-safe band) -->
-      <section id="s5" class="clip scene" data-start="18.5" data-duration="5.5" data-track-index="5">
+      <section id="s5" class="clip scene" data-start="18.5" data-duration="6" data-track-index="5">
         <div class="line hero2" style="top: 640px"><span id="p1">Upload by name.</span></div>
         <div class="line hero2" style="top: 780px"><span id="p2"><span class="pw acc">Publish</span> <span class="pw">when</span><br /><span class="pw">you</span> <span class="pw">say</span> <span class="pw">so.</span></span></div>
+        <div class="line cta-a" style="top: 740px"><span id="cta-a"><span class="cw">If</span> <span class="cw">you</span> <span class="cw">want</span> <span class="cw">the</span> <span class="cw">repo,</span></span></div>
+        <div class="line cta-b" style="top: 835px"><span class="cw cb">comment</span> <span class="cw cb">for</span><br /><span class="cw cb">the</span> <span class="cw cb">link.</span></div>
         <div class="line credit" style="top: 1400px"><span id="credit">yt-autopilot · MIT<br />Music: Sascha Ende, ende.app (CC BY 4.0)</span></div>
+      </section>
+
+      <!-- Captions: only where the spoken words are not already on screen (the chat section) -->
+      <section id="s6" class="clip scene" data-start="6.2" data-duration="6.1" data-track-index="6" data-track-kind="captions">
+        <div id="cp1" class="cap"><span class="cwd hl">Claude</span> <span class="cwd">drafts</span> <span class="cwd">the</span> <span class="cwd">title</span> <span class="cwd">and</span> <span class="cwd">hashtags,</span></div>
+        <div id="cp2" class="cap"><span class="cwd">uploads</span> <span class="cwd">it</span> <span class="cwd hl">private,</span></div>
+        <div id="cp3" class="cap"><span class="cwd">then</span> <span class="cwd">you</span> <span class="cwd">say</span> <span class="cwd hl">“publish</span> <span class="cwd hl">it”</span></div>
+        <div id="cp4" class="cap"><span class="cwd">and</span> <span class="cwd">it’s</span> <span class="cwd hl">live.</span></div>
       </section>
     </div>
 
@@ -396,8 +450,8 @@
       // Scene 3: the working flow.
       tl.fromTo(
         "#window",
-        { opacity: 0, scale: 0.97, filter: "blur(14px)" },
-        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" },
+        { opacity: 0, scale: 0.873, filter: "blur(14px)" },
+        { opacity: 1, scale: 0.9, filter: "blur(0px)", duration: 0.45, ease: "expo.out" },
         5.3,
       );
       tl.fromTo(
@@ -434,7 +488,7 @@
       tl.to("#pill", { scale: 1, duration: 0.4, ease: "expo.out" }, 11.64);
       tl.to(
         "#window",
-        { opacity: 0, scale: 1.02, filter: "blur(14px)", duration: 0.3, ease: "power2.in" },
+        { opacity: 0, scale: 0.918, filter: "blur(14px)", duration: 0.3, ease: "power2.in" },
         13.4,
       );
 
@@ -457,9 +511,24 @@
 
       // Scene 5: punchline and credit.
       inFx("#p1", 18.55, 0.3, 12); // beat
-      $("#p2 .pw").forEach((el, i) => inFx(el, 19.64 + i * 0.07, 0.2, 8)); // beat
+      $("#p2 .pw").forEach((el, i) => inFx(el, 19.1 + i * 0.07, 0.2, 8)); // beat
       inFx("#credit", 20.19, 0.3, 6); // beat
-      outFx("#p1, #p2", 23.45, 0.25, 10);
+      outFx("#p1, #p2", 20.95, 0.25, 10);
+
+      // Closing line, word by word with the voice: "If you want the repo, comment for the link."
+      [21.15, 21.25, 21.41, 21.59, 21.81].forEach((t, i) => inFx($("#cta-a .cw")[i], t - 0.03, 0.15, 6));
+      [22.51, 22.69, 22.97, 23.13].forEach((t, i) => inFx($(".cb")[i], t - 0.1, 0.22, 12));
+
+      // Captions: each phrase pops in word by word with the voice, then clears before the next one starts.
+      [
+        ["#cp1", [6.35, 6.53, 6.89, 7.13, 7.49, 7.73], 8.22],
+        ["#cp2", [8.4, 8.8, 9.07], 9.6],
+        ["#cp3", [9.94, 10.0, 10.16, 10.38, 10.84], 11.02],
+        ["#cp4", [11.2, 11.4, 11.62], 12.05],
+      ].forEach(([sel, times, end]) => {
+        $(sel + " .cwd").forEach((el, i) => inFx(el, times[i] - 0.04, 0.14, 6));
+        outFx(sel, end, 0.12, 4);
+      });
 
       // Audio-reactive glow: a 2 s smoothed bass envelope of the track, one value per second (t = 1..23 s).
       const GLOW = [0.19, 0.1, 0.08, 0.05, 0.01, 0.0, 0.19, 0.37, 0.22, 0.19, 0.17, 0.15, 0.24, 0.13, 0.14, 0.14, 0.2, 0.22, 0.18, 0.07, 0.1, 0.17, 0.06];

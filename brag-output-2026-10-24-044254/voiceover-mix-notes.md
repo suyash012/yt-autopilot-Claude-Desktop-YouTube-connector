@@ -1,6 +1,6 @@
 # Voiceover mix notes
 
-Your recording `Voice_261024_102410.m4a` (mono AAC, 128 kbps, 48 kHz, 28.7 s) mixed into the 9:16 video as `brag-voiced.mp4` (24.0 s). The recording itself is not in the repo. The refined, aligned voice track is `composition-voiced/assets/vo/voiceover.wav`.
+Your recording `Voice_261024_102410.m4a` (mono AAC, 128 kbps, 48 kHz, 28.7 s) mixed into the 9:16 video as `brag-voiced.mp4` (24.5 s, with captions in the chat section and your closing line on screen). The recording itself is not in the repo. The refined, aligned voice track is `composition-voiced/assets/vo/voiceover.wav`.
 
 ## What I found
 
@@ -23,8 +23,9 @@ I used a local speech-to-text model (word timings, no prompt, so it could not be
 - **Cleaned**: high-pass at 90 Hz, a narrow notch at 100 Hz for the hum, 2.5 dB less at 250 Hz, a little presence (+3 dB at 2.8 kHz) and air (+4 dB shelf from 5 kHz). I tested a denoiser and left it out: it only removed the little high end there was.
 - **Leveled** every line to the same loudness (within ±3 dB), shaved two click transients ("it" in "publish it" and one in "hashtags"), then set the voice to −16 LUFS with a limiter that works at 4× oversampling, so the true peak is −1.9 dBFS.
 - **Placed** each line on the video's timeline so your key words land on the visuals. Two lines (the first and "uploads it's private") are 5% faster; pauses inside "Meet … yt-autopilot" and "plus … a weekly report" are shorter.
-- **Retimed the video** to your delivery: the second highlight appears at 15.82 s (was 15.28), the outro lines at 18.55 and 19.64 s (were 18.01 and 18.55), and the credit at 20.19 s. The video is 24.0 s instead of 22.0 s, still under the 25 s limit. The chat flow is unchanged.
-- **Mixed**: music ducks to 40% (0.14) while you speak, with a 0.3 s attack and a 0.5 s release, and comes back up in the gaps. Sound effects are at 75% of their solo level. The mix is −14.0 LUFS with a true peak of −1.7 dBFS. Your voice leads the music and effects by 15–20 dB. A transcription of the final mix recognises the same 53 words as your voice track alone, so the music is not masking anything.
+- **Retimed the video** to your delivery: the second highlight appears at 15.82 s (was 15.28), the outro lines at 18.55 and 19.10 s (were 18.01 and 18.55), and the credit at 20.19 s. The video is 24.5 s instead of 22.0 s, still under the 25 s limit. The chat flow is unchanged, except that the chat window is drawn at 90% size and sits higher, to leave room for the captions.
+- **Added text on screen**: your closing line, "If you want the repo, comment for the link.", appears word by word with your voice once the outro lines clear (20.95 s), with "comment for the link." large in the accent colour. Captions are on only for the chat section (6.35–12.05 s), where your words are not otherwise on screen: "Claude drafts the title and hashtags, uploads it private, then you say "publish it" and it's live." They pop in word by word in a strip below the chat window, above the platform UI band.
+- **Mixed**: music ducks to 40% (0.14) while you speak, with a 0.3 s attack and a 0.5 s release, and comes back up in the gaps. Sound effects are at 75% of their solo level. The mix is −13.9 LUFS with a true peak of −1.7 dBFS. Your voice leads the music and effects by 15–20 dB. A transcription of the final mix recognises the same 53 words as your voice track alone, so the music is not masking anything.
 
 ## Where your lines land
 
@@ -38,12 +39,12 @@ I used a local speech-to-text model (word timings, no prompt, so it could not be
 | It checks Shorts hashtag rules first. | 14.25–16.39 s | Highlight 1 |
 | plus a weekly report | 16.55–18.24 s | Highlight 2 |
 | upload by name, publish when you say so. | 18.58–20.70 s | The two outro lines |
-| If you want the repo, comment for the link. | 21.15–23.41 s | The credit card |
+| If you want the repo, comment for the link. | 21.15–23.41 s | The closing text, word by word |
 
 ## Left out
 
-- The optional "yt-autopilot." sign-off. With it, the video runs to about 25.6 s, over the 25 s limit. Your recording of it is clear, so it can go back in if you want to trade length for it.
-- No on-screen text for the closing line. The punchline and the credit stay on screen while you say it.
+- The optional "yt-autopilot." sign-off. With it, the video runs to about 26 s, over the 25 s limit. Your recording of it is clear, so it can go back in if you want to trade length for it.
+- Captions outside the chat section. The hook, the name, the two highlights and the outro already show the words you say, so a caption there would only repeat them. They are easy to add if you would rather caption every line.
 
 ## If you re-record
 

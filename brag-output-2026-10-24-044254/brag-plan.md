@@ -162,13 +162,15 @@ Every line on screen is either from the project or is framing. Sources:
 
 Framing, not claims: "Your upload button is one sentence", "What if uploading was just a sentence?", the chat window, and the draft title, description and tags. The draft is a fictional example. No channel name, email address, file path or personal data appears in the video.
 
-## Voiced cut (24 s)
+## Voiced cut (24.5 s)
 
-`brag-voiced.mp4` is this plan with the user's recorded voiceover mixed in (`composition-voiced/`). The recording ran slower than the cue sheet and included a closing line of the user's own ("If you want the repo, comment for the link."), so the tail was retimed by whole beats and the video grew from 22 s to 24 s:
+`brag-voiced.mp4` is this plan with the user's recorded voiceover mixed in (`composition-voiced/`). The recording ran slower than the cue sheet and included a closing line of the user's own ("If you want the repo, comment for the link."), so the tail was retimed by whole beats and the video grew from 22 s to 24.5 s:
 
 - Highlight 2 appears at 15.82 s (was 15.28 s); both highlights hold until 18.30 s.
-- The outro lines appear at 18.55 s and 19.64 s (were 18.01 s and 18.55 s), and the credit at 20.19 s (was 18.55 s). They hold until 23.45 s.
-- The music ducks to 0.14 while the voice speaks and returns to 0.35 in the gaps; the sound effects are at 75% of their solo level; the mix is −14.0 LUFS.
-- The optional "yt-autopilot." sign-off is not used (it would push the video past 25 s). There is no on-screen text for the closing line.
+- The outro lines appear at 18.55 s and 19.10 s (were 18.01 s and 18.55 s) and clear at 20.95 s. The credit appears at 20.19 s (was 18.55 s) and holds to the end.
+- The music ducks to 0.14 while the voice speaks and returns to 0.35 in the gaps; the sound effects are at 75% of their solo level; the mix is −13.9 LUFS.
+- The optional "yt-autopilot." sign-off is not used (it would push the video past 25 s).
+- The closing line is on screen, word by word with the voice (21.15–23.13 s): "If you want the repo," in grey and "comment for the link." large in the accent colour, above the credit. It holds to the end (24.5 s).
+- Captions appear only in the chat section (6.35–12.05 s), where the spoken words are not otherwise on screen. The chat window is drawn at 90% size and sits higher, to leave a caption strip below it and above the platform UI band.
 
-Scenes 1 to 3 are unchanged. See `voiceover-mix-notes.md` for the findings on the recording and where each line lands.
+Scenes 1 and 2 are unchanged. Scene 3 keeps its timing; only the window's size and position change, and the captions are added. See `voiceover-mix-notes.md` for the findings on the recording and where each line lands.
