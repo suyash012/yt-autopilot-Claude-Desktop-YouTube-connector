@@ -1,0 +1,1 @@
+Made yt-autopilot. Your upload button is one sentence: "upload <part of the file name> to YouTube." Claude drafts the title, checks the Shorts hashtags, uploads it as private, and waits for you to say "publish it."
