@@ -509,8 +509,9 @@ def main():
     ap.add_argument("--high-shelf", type=float, default=-3.0)
     ap.add_argument("--margin-shift", type=float, default=0.0)
     ap.add_argument("--duck-ui", type=float, default=-2.0)
-    ap.add_argument("--music-db", type=float, default=None, help="fix the music level instead of solving for the loudness target")
-    ap.add_argument("--ui-db", type=float, default=-8.0)
+    ap.add_argument("--music-db", type=float, default=-6.0, help="fix the music level instead of solving for the loudness target")
+    ap.add_argument("--ui-db", type=float, default=-12.0)
+    ap.add_argument("--vo-db", type=float, default=3.0, help="voice gain in dB (about +3 is the most the voice peaks allow)")
     ap.add_argument("--clip", type=float, default=0.9, help="soft-clip threshold on the music bus")
     ap.add_argument("--lufs", type=float, default=-13.5)
     ap.add_argument("--ceiling", type=float, default=-1.8)
@@ -529,7 +530,7 @@ def main():
     print("speech regions:", [(round(a, 2), round(b, 2)) for a, b in iv])
 
     n_out = int(DUR * SR)
-    vo2 = np.stack([vo, vo])[:, :n_out] * 0.7071            # centred, -3 dB per side: same loudness as the mono track
+    vo2 = np.stack([vo, vo])[:, :n_out] * 0.7071 * db(args.vo_db)  # centred, -3 dB per side: same loudness as the mono track
     music, ui = music[:, :n_out], ui[:, :n_out] * db(args.ui_db)
     fade = np.ones(n_out)
     fade_n = int(0.5 * SR)

@@ -13,7 +13,7 @@ python build_score.py --vo ../composition-voiced/assets/vo/voiceover.wav \
 
 It takes about 30 seconds and gives the same file every time. Run it again after changing the voiceover (for example a re-recorded line): the ducking follows the speech it finds in the file. Then render with `npx hyperframes render` from `composition-voiced/`.
 
-Options worth knowing: `--lufs` (loudness target, default −13.5; the rendered video lands within about 0.1 LU of it), `--ceiling` (true-peak ceiling in dB, default −1.8), `--margin-shift` (positive makes the music stay further under the voice), `--duck-low` (how far the bass and kick give way under speech), `--stems DIR` (also write the music, interface sounds and voice separately; with `--bus-stems`, every instrument bus).
+Options worth knowing: `--vo-db` (voice gain, default +3), `--music-db` (music and effects level, default −6; pass nothing to solve it for `--lufs` instead), `--ui-db` (interface sounds, default −12), `--lufs` (loudness target when solving), `--ceiling` (true-peak ceiling in dB, default −1.8), `--margin-shift` (positive makes the music stay further under the voice), `--duck-low` (how far the bass and kick give way under speech), `--stems DIR` (also write the music, interface sounds and voice separately; with `--bus-stems`, every instrument bus).
 
 ## What you hear
 
@@ -40,7 +40,7 @@ Tempo is 110 BPM. Two beat grids are anchored on the two big moments (the name a
 - Under speech the music is ducked per band, and a spectral ceiling keeps it a set margin below your speech level in each band (about 14 dB across 500 Hz–4 kHz, less for the bass, none for the very top). Between phrases it opens up.
 - Big hits skip the ducking for their first moments, so they land. After that they sit under the voice like everything else.
 - A transcription of the rendered video's sound finds the same sentences as your voice alone (mean word confidence 0.81 against 0.78), so the music is not hiding any words.
-- The loudness is −13.6 LUFS in the rendered video with a true peak of −1.4 dBFS. The kick, boom and bass are mostly below what a phone speaker plays, so the hits also carry mid and high content that does come through.
+- The loudness is −13.4 LUFS in the rendered video with a true peak of −1.6 dBFS. The kick, boom and bass are mostly below what a phone speaker plays, so the hits also carry mid and high content that does come through.
 
 ## Files
 
