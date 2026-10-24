@@ -2,6 +2,8 @@
 
 Your recording `Voice_261024_102410.m4a` (mono AAC, 128 kbps, 48 kHz, 28.7 s) mixed into the 9:16 video as `brag-voiced.mp4` (24.5 s, with captions in the chat section and your closing line on screen). The recording itself is not in the repo. The refined, aligned voice track is `composition-voiced/assets/vo/voiceover.wav`.
 
+> **Update:** the music and sound effects in `brag-voiced.mp4` have since been replaced by an original, bolder score (the "Sound design" section at the end, and `sound-design/README.md`). The mix notes below describe your voice and where each line lands; the "Mixed" bullet is the current mix.
+
 ## What I found
 
 | Check | Result |
@@ -25,7 +27,7 @@ I used a local speech-to-text model (word timings, no prompt, so it could not be
 - **Placed** each line on the video's timeline so your key words land on the visuals. Two lines (the first and "uploads it's private") are 5% faster; pauses inside "Meet … yt-autopilot" and "plus … a weekly report" are shorter.
 - **Retimed the video** to your delivery: the second highlight appears at 15.82 s (was 15.28), the outro lines at 18.55 and 19.10 s (were 18.01 and 18.55), and the credit at 20.19 s. The video is 24.5 s instead of 22.0 s, still under the 25 s limit. The chat flow is unchanged, except that the chat window is drawn at 90% size and sits higher, to leave room for the captions.
 - **Added text on screen**: your closing line, "If you want the repo, comment for the link.", appears word by word with your voice once the outro lines clear (20.95 s), with "comment for the link." large in the accent colour. Captions are on only for the chat section (6.35–12.05 s), where your words are not otherwise on screen: "Claude drafts the title and hashtags, uploads it private, then you say "publish it" and it's live." They pop in word by word in a strip below the chat window, above the platform UI band.
-- **Mixed**: music ducks to 40% (0.14) while you speak, with a 0.3 s attack and a 0.5 s release, and comes back up in the gaps. Sound effects are at 75% of their solo level. The mix is −13.9 LUFS with a true peak of −1.7 dBFS. Your voice leads the music and effects by 15–20 dB. A transcription of the final mix recognises the same 53 words as your voice track alone, so the music is not masking anything.
+- **Mixed**: the voice is not processed beyond the cleanup above. Under it, the original score and effects are ducked per band and kept a set margin below your speech level (about 14 dB across 500 Hz–4 kHz), so they open up between phrases and on the big hits. The video's sound is −13.6 LUFS with a true peak of −1.4 dBFS. A transcription of the final mix finds the same sentences as your voice alone (mean word confidence 0.81 against 0.78), so the music is not hiding any words.
 
 ## Where your lines land
 
@@ -49,3 +51,14 @@ I used a local speech-to-text model (word timings, no prompt, so it could not be
 ## If you re-record
 
 Only "Claude drafts the title and hashtags" needs it. Hold the phone 10–15 cm from your mouth, slightly off to one side, switch off any "voice clarity" or noise-suppression setting, and say the "cl" of Claude and the "ts" of drafts a little harder. A single line is enough; it drops straight in at 6.35 s.
+
+## Sound design (second pass)
+
+The first mix used a stock track (Happy Beats, Sascha Ende, CC BY 4.0) and nine small effects (Kenney, CC0). It was clean but light, so it was replaced with a score written for this video. The old mix is still in the git history (commit 9104186).
+
+- **Original and credit-free.** Everything is synthesised in code (`sound-design/build_score.py`, numpy and scipy, no samples), so the credit line is now just `yt-autopilot · MIT`.
+- **Built around the story.** 110 BPM, with the beat grid anchored on the name (3.553 s) and on "Published" (11.459 s), so every visual accent lands on a beat. A minor for the build and the name, C major from "Published" on, so the payoff is a lift, not just a louder bar.
+- **The big moments hit harder.** A boom on "Your upload button" (0.27 s), a rising build with a short silence and the drop on the name (3.55 s), a second build into the biggest hit on "Published" (11.46 s) followed by a full chorus, two smaller accents on the highlight cards, the outro hit on "Upload by name." (18.55 s), and a last hit with a long tail after "link." (23.46 s).
+- **New interface sounds.** Message pops, a card slide, soft ticks as the title types in, and two rising bell pings for "validated" and "uploaded", all in key with the music.
+- **Kept out of the way.** The spectral ducking described above; the first moments of each big hit skip it so they still land.
+- **Rebuild.** `sound-design/README.md` has the command, the cue sheet and the options. Re-run it if you re-record a line.

@@ -158,7 +158,7 @@ Every line on screen is either from the project or is framing. Sources:
 | "Weekly report, every Monday at 9:15" and "Plus a weekly report" | `README.md` "What it does" and "Install" |
 | Tool names `validate_metadata`, `upload_video`, `publish_video` | `server.py` function definitions |
 | "MIT" | `README.md` "License" |
-| Music credit "Sascha Ende, ende.app (CC BY 4.0)" | `skills/brag/assets/music/README.md` in the brag repo |
+| Music credit "Sascha Ende, ende.app (CC BY 4.0)" (silent versions only) | `skills/brag/assets/music/README.md` in the brag repo |
 
 Framing, not claims: "Your upload button is one sentence", "What if uploading was just a sentence?", the chat window, and the draft title, description and tags. The draft is a fictional example. No channel name, email address, file path or personal data appears in the video.
 
@@ -168,7 +168,8 @@ Framing, not claims: "Your upload button is one sentence", "What if uploading wa
 
 - Highlight 2 appears at 15.82 s (was 15.28 s); both highlights hold until 18.30 s.
 - The outro lines appear at 18.55 s and 19.10 s (were 18.01 s and 18.55 s) and clear at 20.95 s. The credit appears at 20.19 s (was 18.55 s) and holds to the end.
-- The music ducks to 0.14 while the voice speaks and returns to 0.35 in the gaps; the sound effects are at 75% of their solo level; the mix is −13.9 LUFS.
+- The music and effects are an original score written for this cut (`sound-design/`: 110 BPM, A minor into C major, beat grids anchored on 3.553 s and 11.459 s), mixed under the voice with per-band ducking; the sound is −13.6 LUFS. This replaces the stock track and the nine small effects of the first voiced mix (commit 9104186).
+- Because the music is original, the credit is one line, `yt-autopilot · MIT`. The music credit in the sections above applies to the silent versions only.
 - The optional "yt-autopilot." sign-off is not used (it would push the video past 25 s).
 - The closing line is on screen, word by word with the voice (21.15–23.13 s): "If you want the repo," in grey and "comment for the link." large in the accent colour, above the credit. It holds to the end (24.5 s).
 - Captions appear only in the chat section (6.35–12.05 s), where the spoken words are not otherwise on screen. The chat window is drawn at 90% size and sits higher, to leave a caption strip below it and above the platform UI band.

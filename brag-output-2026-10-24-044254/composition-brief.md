@@ -67,7 +67,14 @@ Scene summary:
 - Audio files: in `composition/assets/` (music, sfx, `vendor/gsap.min.js`).
 
 ## Voiced cut
-`composition-voiced/` is a copy of `composition/` with the user's recorded voiceover added (`assets/vo/voiceover.wav`, a 24 s mono track already aligned to the timeline) and rendered to `brag-voiced.mp4`. Differences from `composition/`: duration 24.5 s; a `vo` audio element; a `data-automation` volume lane on the music that ducks it to 40% while the voice speaks; sound effects at about 75%; highlight 2, the outro lines and the credit retimed to the beats at 15.82, 18.55, 19.10 and 20.19 s; the closing line "If you want the repo, comment for the link." on screen word by word (21.15–23.13 s); captions for the chat section only (a `data-track-kind="captions"` section, 6.35–12.05 s), with the chat window drawn at 90% size and higher to make room for them. Details and measurements are in `voiceover-mix-notes.md`.
+`composition-voiced/` is a copy of `composition/` with the user's recorded voiceover and an original score. Differences from `composition/`:
+
+- Duration 24.5 s, with highlight 2, the outro lines and the credit retimed to the beats at 15.82, 18.55, 19.10 and 20.19 s.
+- Audio is one stereo premix, `assets/audio/mix.wav`, in a single `<audio id="mix">` element: the recorded voiceover (`assets/vo/voiceover.wav`, a 24 s mono track already aligned to the timeline), a synthesised score and sound effects, ducked under the speech and limited. It is built by `sound-design/build_score.py` (110 BPM; beat grids anchored on 3.553 s and 11.459 s; A minor, then C major from 11.46 s). The stock track and effects of the silent cut are not used here.
+- The credit is one line, `yt-autopilot · MIT`: the score is original, so the music credit is gone. The background glow follows the bass of the new score.
+- The closing line "If you want the repo, comment for the link." is on screen word by word (21.15–23.13 s), and captions cover the chat section only (6.35–12.05 s), with the chat window drawn at 90% size and higher to make room for them.
+
+The first voiced mix (stock track, ducking lane, nine small effects) is in git history, commit 9104186. Details and measurements are in `voiceover-mix-notes.md`; the score is described in `sound-design/README.md`.
 
 ## Hyperframes Instructions
 Same conventions as the landscape run (Hyperframes 0.8.191): one `index.html`, `data-composition-id="main"`, now `data-width="1080" data-height="1920"` and `data-resolution="portrait"`; scenes are timed `class="clip"` sections with their own `data-track-index`; one paused GSAP timeline on `window.__timelines["main"]`; GSAP vendored locally.
